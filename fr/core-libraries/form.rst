@@ -38,7 +38,7 @@ exemple, un simple formulaire de contact ressemblerait à ceci::
                 ->addField('body', ['type' => 'text']);
         }
 
-        protected function _buildValidator(Validator $validator)
+        protected function validationDefault(Validator $validator)
         {
             return $validator->add('name', 'length', [
                     'rule' => ['minLength', 10],
@@ -62,7 +62,7 @@ les formulaires:
 * ``_buildSchema`` et utilisé pour définir le schema des données utilisé par
   FormHelper pour créer le formulaire HTML. Vous pouvez définir le type de
   champ, la longueur et la précision.
-* ``_buildValidator`` Récupère une instance de
+* ``validationDefault`` Récupère une instance de
   :php:class:`Cake\\Validation\\Validator` à laquelle vous pouvez attacher des
   validateurs.
 * ``_execute`` vous permet de définir le comportement que vous souhaitez lorsque
